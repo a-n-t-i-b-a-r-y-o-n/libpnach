@@ -1,0 +1,8 @@
+[package]
+name = "libpnach"
+version = "0.0.1"
+authors = ["a-n-t-i-b-a-r-y-o-n"]
+edition = "2018"
+
+[dependencies]
+regex = "1.5"       # For parsing raw codes
