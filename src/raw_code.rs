@@ -8,8 +8,7 @@ pub fn parse_raw_codes(input: &str) -> Result<Vec<PNachCode>, Box<dyn std::error
 	// Address *and* value regex, i.e. 2x 32-bit words in hex separated by whitespace
 	let words_regex = Regex::new(r#"((?:[0-9]|[A-F]|[a-f]){8})\s+((?:[0-9]|[A-F]|[a-f]){8})"#).expect("Error creating words regex?");
 	// Regular expression for a group of 2 columns of 8-digit hex codes w/ optional ascii comment lines
-	let code_regex = Regex::new(r#"([/#;]+[\s\S]+?|(\s{2,}))+(((?:[0-9]|[A-F]|[a-f]){8})\s+((?:[0-9]|[A-F]|[a-f]){8})(\s?))+"#)
-		.expect("Error creating code regex?");
+	let code_regex = Regex::new(r#"([/#;]+[\s\S]+?|(\s{2,}))+(((?:[0-9]|[A-F]|[a-f]){8})\s+((?:[0-9]|[A-F]|[a-f]){8})(\s?))+"#).expect("Error creating code regex?");
 	// Output vec
 	let mut output: Vec<PNachCode> = vec![];
 	// Push all captured codes to output vec
